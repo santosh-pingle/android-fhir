@@ -14,7 +14,7 @@
  limitations under the License.
 -->
 <resources>
-    <string name="app_name">Structured Data Capture Catalog</string>
+    <string name="app_name">Ux Testing</string>
     <string name="submit_button_text">Submit</string>
     <string name="component_nav_heading">Components</string>
     <string name="layout_nav_heading">Layouts</string>
