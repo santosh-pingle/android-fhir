@@ -88,7 +88,6 @@
         },
         {
           "linkId": "18f4f09a-7ee5-4f65-8b67-f1c0b96c7e26",
-          "prefix": "1.",
           "type": "string",
           "required": true,
           "text": "Name",
@@ -134,7 +133,6 @@
         },
         {
           "linkId": "7cb2f67e-3f2b-4a30-a89c-256dd8475a7f",
-          "prefix": "2.",
           "type": "string",
           "text": "Phone number",
           "extension": [
@@ -183,7 +181,6 @@
     },
     {
       "linkId": "42ab960b-9c10-416c-8ba9-904267a45b47",
-      "prefix": "3.",
       "type": "integer",
       "text": "How tall is the client?",
       "extension": [
@@ -241,7 +238,6 @@
     },
     {
       "linkId": "2219ef7a-7965-415a-fefa-83c6c17d624f",
-      "prefix": "4.",
       "type": "integer",
       "text": "What year were they born?",
       "required": false,
@@ -290,7 +286,6 @@
     },
     {
       "linkId": "4aadcbcf-acf5-4f33-8d35-b3fd20a8a74d",
-      "prefix": "5.",
       "type": "choice",
       "text": "What state do they live in?",
       "required": true,
@@ -400,7 +395,6 @@
     },
     {
       "linkId": "fa468c14-334b-4064-d825-24a40846caf7",
-      "prefix": "6.",
       "type": "choice",
       "text": "What city does the client live in?",
       "required": true,
@@ -509,7 +503,6 @@
     },
     {
       "linkId": "e0dd636e-c679-4826-c08c-4ae2a6bf52c3",
-      "prefix": "7.",
       "type": "date",
       "text": "Enter a date",
       "required": true,
@@ -546,7 +539,6 @@
     },
     {
       "linkId": "ae5df32e-3d72-4660-d034-d7bc4dbf3145",
-      "prefix": "8.",
       "type": "choice",
       "required": true,
       "answerOption": [
@@ -584,7 +576,6 @@
     },
     {
       "linkId": "e9ccb5ab-4c5c-4e45-d7fc-8c88f83269e9",
-      "prefix": "9.",
       "type": "choice",
       "text": "What’s the reason for today’s visit?",
       "required": true,
@@ -694,7 +685,6 @@
     },
     {
       "linkId": "701e7c6d-6038-4e3b-8035-3bfedecb20a1",
-      "prefix": "10.",
       "type": "choice",
       "text": "Does the client have any of the following symptoms?",
       "repeats": true,
@@ -779,7 +769,6 @@
     },
     {
       "linkId": "798758c7-a23f-488e-ebda-7f1a2f1cd1ca",
-      "prefix": "11.",
       "type": "dateTime",
       "required": true,
       "text": "Schedule the next appointment",
@@ -812,7 +801,6 @@
     },
     {
       "linkId": "5d235c2c-2e6a-4a68-83b5-7b3940cf23c0",
-      "prefix": "12.",
       "type": "integer",
       "text": "How many children does the client have?",
       "required": false,

@@ -53,6 +53,10 @@
         "system": "http://helsenorge.no/fhir/ValueSet/sdf-information-message",
         "code": "1"
       }
+    },
+    {
+      "url" : "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-entryMode",
+      "valueCode" : "prior-edit"
     }
   ],
   "item": [
@@ -78,11 +82,11 @@
         {
           "linkId": "8a6c5b6b-cb99-4901-ad58-dabcdb933efe",
           "type": "group",
-          "text": "Register a new person",
           "item": [
             {
               "linkId": "1b696f35-7b1e-4983-ec82-523dd0638c72",
               "type": "display",
+              "text": "Register a new person",
               "item": [
                 {
                   "extension": [
@@ -99,7 +103,7 @@
                     }
                   ],
                   "linkId": "a.1",
-                  "text": "Help us learn as much as we can about the person you are registering today",
+                  "text": "Type the name Orange Flower and the phone number 08186782626",
                   "type": "display"
                 }
               ]
@@ -108,8 +112,6 @@
               "linkId": "18f4f09a-7ee5-4f65-8b67-f1c0b96c7e26",
               "type": "string",
               "required": true,
-              "prefix": "1.",
-              "text": "Name",
               "extension": [
                 {
                   "url": "http://helsenorge.no/fhir/StructureDefinition/sdf-sublabel",
@@ -131,30 +133,30 @@
               "maxLength": 40,
               "item": [
                 {
+                  "linkId": "p1.1",
+                  "text": "Name",
+                  "type": "display",
                   "extension": [
                     {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-displayCategory",
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
                       "valueCodeableConcept": {
                         "coding": [
                           {
-                            "system": "http://hl7.org/fhir/questionnaire-display-category",
-                            "code": "instructions"
+                            "system": "http://hl7.org/fhir/questionnaire-item-control",
+                            "code": "flyover",
+                            "display": "Fly-over"
                           }
-                        ]
+                        ],
+                        "text": "Flyover"
                       }
                     }
-                  ],
-                  "linkId": "a.1",
-                  "text": "Type the name “Orange Flower”",
-                  "type": "display"
+                  ]
                 }
               ]
             },
             {
               "linkId": "7cb2f67e-3f2b-4a30-a89c-256dd8475a7f",
               "type": "string",
-              "prefix": "2.",
-              "text": "Phone number",
               "extension": [
                 {
                   "url": "http://helsenorge.no/fhir/StructureDefinition/sdf-sublabel",
@@ -170,29 +172,31 @@
                 },
                 {
                   "url": "http://hl7.org/fhir/StructureDefinition/minLength",
-                  "valueInteger": 8
+                  "valueInteger": 11
                 }
               ],
               "required": true,
-              "maxLength": 8,
+              "maxLength": 11,
               "item": [
                 {
+                  "linkId": "1-mobile-number",
+                  "text": "Mobile number",
+                  "type": "display",
                   "extension": [
                     {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-displayCategory",
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
                       "valueCodeableConcept": {
                         "coding": [
                           {
-                            "system": "http://hl7.org/fhir/questionnaire-display-category",
-                            "code": "instructions"
+                            "system": "http://hl7.org/fhir/questionnaire-item-control",
+                            "code": "flyover",
+                            "display": "Fly-over"
                           }
-                        ]
+                        ],
+                        "text": "Flyover"
                       }
                     }
-                  ],
-                  "linkId": "b.1",
-                  "text": "Type the phone number “98 87 76 65”",
-                  "type": "display"
+                  ]
                 }
               ]
             }
@@ -201,154 +205,6 @@
         }
       ]
     },
-    {
-      "linkId": "p2",
-      "type": "group",
-      "extension": [
-        {
-          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-          "valueCodeableConcept": {
-            "coding": [
-              {
-                "system": "http://hl7.org/fhir/questionnaire-item-control",
-                "code": "page",
-                "display": "Page"
-              }
-            ],
-            "text": "Page"
-          }
-        }
-      ],
-      "item": [
-        {
-          "linkId": "42ab960b-9c10-416c-8ba9-904267a45b47",
-          "prefix": "3.",
-          "type": "integer",
-          "text": "How tall is the client?",
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
-              "valueCoding": {
-                "system": "http://unitsofmeasure.org",
-                "code": "cm",
-                "display": "centimeter"
-              }
-            },
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/maxDecimalPlaces",
-              "valueInteger": 1
-            },
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/minValue",
-              "valueInteger": 30
-            },
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/maxValue",
-              "valueInteger": 200
-            },
-            {
-              "url": "http://ehelse.no/fhir/StructureDefinition/validationtext",
-              "valueString": "Number is out of range"
-            },
-            {
-              "url": "http://helsenorge.no/fhir/StructureDefinition/sdf-sublabel",
-              "valueMarkdown": "Enter in centimeters"
-            }
-          ],
-          "required": false,
-          "item": [
-            {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-displayCategory",
-                  "valueCodeableConcept": {
-                    "coding": [
-                      {
-                        "system": "http://hl7.org/fhir/questionnaire-display-category",
-                        "code": "instructions"
-                      }
-                    ]
-                  }
-                }
-              ],
-              "linkId": "1.3",
-              "text": "Enter in centimeters",
-              "type": "display"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "linkId": "p3",
-      "type": "group",
-      "extension": [
-        {
-          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-          "valueCodeableConcept": {
-            "coding": [
-              {
-                "system": "http://hl7.org/fhir/questionnaire-item-control",
-                "code": "page",
-                "display": "Page"
-              }
-            ],
-            "text": "Page"
-          }
-        }
-      ],
-      "item": [
-    {
-      "linkId": "2219ef7a-7965-415a-fefa-83c6c17d624f",
-      "prefix": "4.",
-      "type": "integer",
-      "text": "What year were they born?",
-      "required": false,
-      "extension": [
-        {
-          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
-          "valueCoding": {
-            "system": "http://unitsofmeasure.org",
-            "code": "a",
-            "display": "year"
-          }
-        },
-        {
-          "url": "http://ehelse.no/fhir/StructureDefinition/validationtext",
-          "valueString": "Year must be between 1900 and 2022"
-        },
-        {
-          "url": "http://hl7.org/fhir/StructureDefinition/minValue",
-          "valueInteger": 1900
-        },
-        {
-          "url": "http://hl7.org/fhir/StructureDefinition/maxValue",
-          "valueInteger": 2022
-        }
-      ],
-      "item": [
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-displayCategory",
-              "valueCodeableConcept": {
-                "coding": [
-                  {
-                    "system": "http://hl7.org/fhir/questionnaire-display-category",
-                    "code": "instructions"
-                  }
-                ]
-              }
-            }
-          ],
-          "linkId": "1.3",
-          "text": "Enter a year between 1900 and 2022",
-          "type": "display"
-        }
-      ]
-    }
-        ]
-        },
     {
       "linkId": "p4",
       "type": "group",
@@ -370,7 +226,6 @@
       "item": [
         {
           "linkId": "4aadcbcf-acf5-4f33-8d35-b3fd20a8a74d",
-          "prefix": "5.",
           "type": "choice",
           "text": "What state do they live in?",
           "required": true,
@@ -455,6 +310,150 @@
                 "system": "urn:uuid:49ce55a2-b181-4ad2-f196-5c6393d03d36",
                 "display": "State H"
               }
+            },
+            {
+              "valueCoding": {
+                "id": "d676228b-4bb8-44b4-8658-397144c709e4",
+                "code": "state-i",
+                "system": "urn:uuid:49ce55a2-b181-4ad2-f196-5c6393d03d36",
+                "display": "State I"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "d676228b-4bb8-44b4-8658-397144c709e4",
+                "code": "state-j",
+                "system": "urn:uuid:49ce55a2-b181-4ad2-f196-5c6393d03d36",
+                "display": "State J"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "d676228b-4bb8-44b4-8658-397144c709e4",
+                "code": "state-k",
+                "system": "urn:uuid:49ce55a2-b181-4ad2-f196-5c6393d03d36",
+                "display": "State K"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "d676228b-4bb8-44b4-8658-397144c709e4",
+                "code": "state-l",
+                "system": "urn:uuid:49ce55a2-b181-4ad2-f196-5c6393d03d36",
+                "display": "State L"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "d676228b-4bb8-44b4-8658-397144c709e4",
+                "code": "state-m",
+                "system": "urn:uuid:49ce55a2-b181-4ad2-f196-5c6393d03d36",
+                "display": "State M"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "d676228b-4bb8-44b4-8658-397144c709e4",
+                "code": "state-n",
+                "system": "urn:uuid:49ce55a2-b181-4ad2-f196-5c6393d03d36",
+                "display": "State N"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "d676228b-4bb8-44b4-8658-397144c709e4",
+                "code": "state-o",
+                "system": "urn:uuid:49ce55a2-b181-4ad2-f196-5c6393d03d36",
+                "display": "State O"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "d676228b-4bb8-44b4-8658-397144c709e4",
+                "code": "state-p",
+                "system": "urn:uuid:49ce55a2-b181-4ad2-f196-5c6393d03d36",
+                "display": "State P"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "d676228b-4bb8-44b4-8658-397144c709e4",
+                "code": "state-q",
+                "system": "urn:uuid:49ce55a2-b181-4ad2-f196-5c6393d03d36",
+                "display": "State Q"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "d676228b-4bb8-44b4-8658-397144c709e4",
+                "code": "state-r",
+                "system": "urn:uuid:49ce55a2-b181-4ad2-f196-5c6393d03d36",
+                "display": "State R"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "d676228b-4bb8-44b4-8658-397144c709e4",
+                "code": "state-s",
+                "system": "urn:uuid:49ce55a2-b181-4ad2-f196-5c6393d03d36",
+                "display": "State S"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "d676228b-4bb8-44b4-8658-397144c709e4",
+                "code": "state-t",
+                "system": "urn:uuid:49ce55a2-b181-4ad2-f196-5c6393d03d36",
+                "display": "State T"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "d676228b-4bb8-44b4-8658-397144c709e4",
+                "code": "state-u",
+                "system": "urn:uuid:49ce55a2-b181-4ad2-f196-5c6393d03d36",
+                "display": "State U"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "d676228b-4bb8-44b4-8658-397144c709e4",
+                "code": "state-v",
+                "system": "urn:uuid:49ce55a2-b181-4ad2-f196-5c6393d03d36",
+                "display": "State V"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "d676228b-4bb8-44b4-8658-397144c709e4",
+                "code": "state-w",
+                "system": "urn:uuid:49ce55a2-b181-4ad2-f196-5c6393d03d36",
+                "display": "State W"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "d676228b-4bb8-44b4-8658-397144c709e4",
+                "code": "state-x",
+                "system": "urn:uuid:49ce55a2-b181-4ad2-f196-5c6393d03d36",
+                "display": "State X"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "d676228b-4bb8-44b4-8658-397144c709e4",
+                "code": "state-y",
+                "system": "urn:uuid:49ce55a2-b181-4ad2-f196-5c6393d03d36",
+                "display": "State Y"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "d676228b-4bb8-44b4-8658-397144c709e4",
+                "code": "state-z",
+                "system": "urn:uuid:49ce55a2-b181-4ad2-f196-5c6393d03d36",
+                "display": "State Z"
+              }
             }
           ],
           "item": [
@@ -475,136 +474,26 @@
               "linkId": "1.3",
               "text": "Select below",
               "type": "display"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "linkId": "p5",
-      "type": "group",
-      "extension": [
-        {
-          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-          "valueCodeableConcept": {
-            "coding": [
-              {
-                "system": "http://hl7.org/fhir/questionnaire-item-control",
-                "code": "page",
-                "display": "Page"
-              }
-            ],
-            "text": "Page"
-          }
-        }
-      ],
-      "item": [
-        {
-          "linkId": "fa468c14-334b-4064-d825-24a40846caf7",
-          "prefix": "6.",
-          "type": "choice",
-          "text": "What city does the client live in?",
-          "required": true,
-          "repeats": true,
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-              "valueCodeableConcept": {
-                "coding": [
-                  {
-                    "system": "http://hl7.org/fhir/questionnaire-item-control",
-                    "code": "autocomplete",
-                    "display": "Auto-complete"
-                  }
-                ],
-                "text": "Auto-complete"
-              }
-            }
-          ],
-          "answerOption": [
-            {
-              "valueCoding": {
-                "id": "44163b86-0158-4fd2-835a-bcabe64f1af3",
-                "code": "city-a",
-                "system": "urn:uuid:b00d81ce-7795-4207-80e5-dd5202784df9",
-                "display": "City A"
-              }
             },
             {
-              "valueCoding": {
-                "id": "63435aa2-e378-4abf-cc72-541e260d8e1c",
-                "code": "city-b",
-                "system": "urn:uuid:b00d81ce-7795-4207-80e5-dd5202784df9",
-                "display": "City B"
-              }
-            },
-            {
-              "valueCoding": {
-                "id": "1687a5be-589f-43b0-f942-028fee8a90a0",
-                "code": "city-c",
-                "system": "urn:uuid:b00d81ce-7795-4207-80e5-dd5202784df9",
-                "display": "City C"
-              }
-            },
-            {
-              "valueCoding": {
-                "id": "1c07e679-01cd-41ad-89a4-e0ba08ab128f",
-                "code": "city-d",
-                "system": "urn:uuid:b00d81ce-7795-4207-80e5-dd5202784df9",
-                "display": "City D"
-              }
-            },
-            {
-              "valueCoding": {
-                "id": "96abe67b-6d57-464a-f84d-332789ef337b",
-                "code": "city-e",
-                "system": "urn:uuid:b00d81ce-7795-4207-80e5-dd5202784df9",
-                "display": "City E"
-              }
-            },
-            {
-              "valueCoding": {
-                "id": "04b49f4d-3689-4103-8dd1-530aa585ca1b",
-                "code": "city-f",
-                "system": "urn:uuid:b00d81ce-7795-4207-80e5-dd5202784df9",
-                "display": "City F"
-              }
-            },
-            {
-              "valueCoding": {
-                "id": "8b5b3d36-f737-4b8d-ef2e-8fdf00138a0a",
-                "code": "city-g",
-                "system": "urn:uuid:b00d81ce-7795-4207-80e5-dd5202784df9",
-                "display": "City G"
-              }
-            },
-            {
-              "valueCoding": {
-                "id": "f4179fcf-01d2-4737-8435-77527d75f056",
-                "code": "city-h",
-                "system": "urn:uuid:b00d81ce-7795-4207-80e5-dd5202784df9",
-                "display": "City H"
-              }
-            }
-          ],
-          "item": [
-            {
+              "linkId": "1.4",
+              "text": "State",
+              "type": "display",
               "extension": [
                 {
-                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-displayCategory",
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
                   "valueCodeableConcept": {
                     "coding": [
                       {
-                        "system": "http://hl7.org/fhir/questionnaire-display-category",
-                        "code": "instructions"
+                        "system": "http://hl7.org/fhir/questionnaire-item-control",
+                        "code": "flyover",
+                        "display": "Fly-over"
                       }
-                    ]
+                    ],
+                    "text": "Flyover"
                   }
                 }
-              ],
-              "linkId": "1.3",
-              "text": "Start typing to filter the list",
-              "type": "display"
+              ]
             }
           ]
         }
@@ -631,7 +520,6 @@
       "item": [
         {
           "linkId": "e0dd636e-c679-4826-c08c-4ae2a6bf52c3",
-          "prefix": "7.",
           "type": "date",
           "text": "Enter a date",
           "required": true,
@@ -689,7 +577,6 @@
       "item": [
     {
       "linkId": "ae5df32e-3d72-4660-d034-d7bc4dbf3145",
-      "prefix": "8.",
       "type": "choice",
       "required": true,
       "answerOption": [
@@ -748,9 +635,9 @@
       "item": [
         {
           "linkId": "e9ccb5ab-4c5c-4e45-d7fc-8c88f83269e9",
-          "prefix": "9.",
           "type": "choice",
           "text": "What’s the reason for today’s visit?",
+          "repeats": true,
           "required": true,
           "answerOption": [
             {
@@ -879,7 +766,6 @@
       "item": [
         {
           "linkId": "701e7c6d-6038-4e3b-8035-3bfedecb20a1",
-          "prefix": "10.",
           "type": "choice",
           "text": "Does the client have any of the following symptoms?",
           "repeats": true,
@@ -956,63 +842,29 @@
                   }
                 }
               ],
-              "linkId": "1.3",
+              "linkId": "9.1",
               "text": "if none of these apply, type in the symptom",
               "type": "display"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "linkId": "p10",
-      "type": "group",
-      "extension": [
-        {
-          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-          "valueCodeableConcept": {
-            "coding": [
-              {
-                "system": "http://hl7.org/fhir/questionnaire-item-control",
-                "code": "page",
-                "display": "Page"
-              }
-            ],
-            "text": "Page"
-          }
-        }
-      ],
-      "item": [
-        {
-          "linkId": "798758c7-a23f-488e-ebda-7f1a2f1cd1ca",
-          "prefix": "11.",
-          "type": "dateTime",
-          "required": true,
-          "text": "Schedule the next appointment",
-          "extension": [
+            },
             {
-              "url": "http://helsenorge.no/fhir/StructureDefinition/sdf-sublabel",
-              "valueMarkdown": "Select a date in 4 weeks"
-            }
-          ],
-          "item": [
-            {
+              "linkId": "9.2",
+              "text": "Symptom",
+              "type": "display",
               "extension": [
                 {
-                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-displayCategory",
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
                   "valueCodeableConcept": {
                     "coding": [
                       {
-                        "system": "http://hl7.org/fhir/questionnaire-display-category",
-                        "code": "instructions"
+                        "system": "http://hl7.org/fhir/questionnaire-item-control",
+                        "code": "flyover",
+                        "display": "Fly-over"
                       }
-                    ]
+                    ],
+                    "text": "Flyover"
                   }
                 }
-              ],
-              "linkId": "1.3",
-              "text": "Select a date in 4 weeks",
-              "type": "display"
+              ]
             }
           ]
         }
@@ -1039,7 +891,6 @@
       "item": [
     {
       "linkId": "5d235c2c-2e6a-4a68-83b5-7b3940cf23c0",
-      "prefix": "12.",
       "type": "integer",
       "text": "How many children does the client have?",
       "required": false,
@@ -1059,6 +910,55 @@
       ]
     }
         ]
+    },
+    {
+      "linkId": "p12",
+      "type": "group",
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/questionnaire-item-control",
+                "code": "page",
+                "display": "Page"
+              }
+            ],
+            "text": "Page"
+          }
+        }
+      ],
+      "item": [
+        {
+          "linkId": "5d235c2c-2e6a-4a68-83b5-7b3940cf23c0",
+          "type": "integer",
+          "text": "How many children does the client have?",
+          "required": false,
+          "item": [
+            {
+              "linkId": "12.1",
+              "text": "Number of children",
+              "type": "display",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "system": "http://hl7.org/fhir/questionnaire-item-control",
+                        "code": "flyover",
+                        "display": "Fly-over"
+                      }
+                    ],
+                    "text": "Flyover"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ]
 }
