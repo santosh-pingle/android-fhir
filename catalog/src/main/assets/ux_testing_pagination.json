@@ -111,7 +111,6 @@
             {
               "linkId": "18f4f09a-7ee5-4f65-8b67-f1c0b96c7e26",
               "type": "string",
-              "required": true,
               "extension": [
                 {
                   "url": "http://helsenorge.no/fhir/StructureDefinition/sdf-sublabel",
@@ -175,7 +174,6 @@
                   "valueInteger": 11
                 }
               ],
-              "required": true,
               "maxLength": 11,
               "item": [
                 {
@@ -235,7 +233,7 @@
               "valueCodeableConcept": {
                 "coding": [
                   {
-                    "system": "http://hl7.org/fhir/ValueSet/questionnaire-item-control",
+                    "system": "http://hl7.org/fhir/questionnaire-item-control",
                     "code": "drop-down"
                   }
                 ]
@@ -703,6 +701,30 @@
                 "system": "urn:uuid:ec9ad6dc-d39d-4a6d-d7a8-9266811604b2",
                 "display": "High blood sugar"
               }
+            },
+            {
+              "valueCoding": {
+                "id": "898a1460-e9c6-4915-8c65-65af6a20b232",
+                "code": "stomach-pain",
+                "system": "urn:uuid:ec9ad6dc-d39d-4a6d-d7a8-9266811604b2",
+                "display": "Stomach pain"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "898a1460-e9c6-4915-8c65-65af6a20b232",
+                "code": "chest-pain",
+                "system": "urn:uuid:ec9ad6dc-d39d-4a6d-d7a8-9266811604b2",
+                "display": "Chest pain"
+              }
+            },
+            {
+              "valueCoding": {
+                "id": "898a1460-e9c6-4915-8c65-65af6a20b232",
+                "code": "child-health",
+                "system": "urn:uuid:ec9ad6dc-d39d-4a6d-d7a8-9266811604b2",
+                "display": "Child health"
+              }
             }
           ],
           "extension": [
@@ -711,7 +733,7 @@
               "valueCodeableConcept": {
                 "coding": [
                   {
-                    "system": "http://hl7.org/fhir/ValueSet/questionnaire-item-control",
+                    "system": "http://hl7.org/fhir/questionnaire-item-control",
                     "code": "check-box"
                   }
                 ]
@@ -784,7 +806,6 @@
               }
             }
           ],
-          "required": true,
           "answerOption": [
             {
               "valueCoding": {
