@@ -44,8 +44,8 @@ class QuestionnaireResponseFragment : Fragment() {
   override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
     super.onViewCreated(view, savedInstanceState)
     setCloseOnClickListener()
-    view.findViewById<TextView>(R.id.questionnaire_response_tv).text =
-      JSONObject(args.questionnaireResponse).toString(2)
+//    view.findViewById<TextView>(R.id.questionnaire_response_tv).text =
+//      JSONObject(args.questionnaireResponse).toString(2)
   }
 
   override fun onOptionsItemSelected(item: MenuItem): Boolean {
